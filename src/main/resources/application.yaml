@@ -1,3 +1,9 @@
 spring:
   application:
     name: cloud-ingestion-service
+
+  datasource:
+    url: jdbc:postgresql://localhost:5432/cloudingestion
+    username: user
+    password: secret
+    driver-class-name: org.postgresql.Driver
