@@ -11,25 +11,13 @@
 	<groupId>com.paxier</groupId>
 	<artifactId>cloud-ingestion-service</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name/>
-	<description/>
-	<url/>
-	<licenses>
-		<license/>
-	</licenses>
-	<developers>
-		<developer/>
-	</developers>
-	<scm>
-		<connection/>
-		<developerConnection/>
-		<tag/>
-		<url/>
-	</scm>
+
 	<properties>
 		<java.version>25</java.version>
 		<spring-cloud-gcp.version>8.3.0</spring-cloud-gcp.version>
 		<spring-cloud.version>2025.1.4</spring-cloud.version>
+		<zonky.embedded-database-spring-test.version>2.7.1</zonky.embedded-database-spring-test.version>
+		<zonky.embedded-postgres.version>2.2.0</zonky.embedded-postgres.version>
 	</properties>
 	<dependencies>
 		<dependency>
@@ -67,6 +55,18 @@
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-webmvc-test</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>io.zonky.test</groupId>
+			<artifactId>embedded-postgres</artifactId>
+			<version>${zonky.embedded-postgres.version}</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>io.zonky.test</groupId>
+			<artifactId>embedded-database-spring-test</artifactId>
+			<version>${zonky.embedded-database-spring-test.version}</version>
 			<scope>test</scope>
 		</dependency>
 	</dependencies>
