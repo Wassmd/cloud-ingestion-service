@@ -1,0 +1,16 @@
+@baseUrl = http://localhost:8080
+@bucket =  it-learning-hub-demo-jsonl
+@objectName = raw/2026/11/01/test.jsonl
+
+### Import an existing JSONL object from GCS (writes to the local database)
+POST {{baseUrl}}/events/gcs/file-received
+Content-Type: application/json
+ce-specversion: 1.0
+ce-id: local-test-1
+ce-type: google.cloud.storage.object.v1.finalized
+ce-source: //storage.googleapis.com/projects/_/buckets/{{bucket}}
+
+{
+  "bucket": "{{bucket}}",
+  "name": "{{objectName}}"
+}

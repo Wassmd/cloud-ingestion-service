@@ -1,4 +1,4 @@
-package cloud_ingestion_service;
+package cloudingestion;
 
 import static io.zonky.test.db.AutoConfigureEmbeddedDatabase.DatabaseProvider.EMBEDDED;
 
