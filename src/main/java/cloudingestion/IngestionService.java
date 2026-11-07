@@ -79,7 +79,7 @@ public class IngestionService {
     private void addValid(PromotionPrice price) {
       pending.add(price);
       if (pending.size() == BATCH_SIZE) {
-        flush();
+        savePendingBatch();
       }
     }
 
@@ -91,7 +91,7 @@ public class IngestionService {
       }
     }
 
-    private void flush() {
+    private void savePendingBatch() {
       if (pending.isEmpty()) {
         return;
       }
@@ -101,7 +101,7 @@ public class IngestionService {
     }
 
     ImportResult finish() {
-      flush();
+      savePendingBatch();
       if (imported == 0 && skipped > 0) {
         ParsedLine.Invalid first = errors.getFirst();
         throw new InvalidIngestionFileException("No valid lines in " + sourceFile + " (" + skipped

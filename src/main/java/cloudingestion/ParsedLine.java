@@ -5,9 +5,12 @@ public sealed interface ParsedLine {
 
   int lineNumber();
 
-  record Valid(int lineNumber, PromotionPrice price) implements ParsedLine {
-  }
+  record Valid(
+      int lineNumber,
+      PromotionPrice price) implements ParsedLine { }
 
-  record Invalid(int lineNumber, String error) implements ParsedLine {
-  }
+  record Invalid(
+      int lineNumber,
+      String error
+  ) implements ParsedLine { }
 }
