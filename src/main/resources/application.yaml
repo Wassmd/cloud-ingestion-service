@@ -2,6 +2,12 @@ spring:
   application:
     name: cloud-ingestion-service
 
+  cloud:
+    gcp:
+      sql:
+        # We configure the Cloud SQL JDBC URL ourselves via SPRING_DATASOURCE_URL
+        enabled: false
+
   datasource:
     url: jdbc:postgresql://localhost:5432/cloudingestion
     username: user
